@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -61,7 +61,7 @@
             padding: 20px;
             font-size: 1.2rem;
             text-align: center;
-            border: 1px solid ccccccec;
+            border: 1px solid #ccc;
             border-radius: 5px;
             cursor: pointer;
             background: inherit;
@@ -108,6 +108,8 @@
             <div class="button" data-key=".">.</div>
             <div class="button" data-key="=">=</div>
             <div class="button operation" data-key="+">+</div>
+
+            <div class="button" data-key="⌫">⌫</div> <!-- Tombol Backspace -->
         </div>
         <div class="toggle-dark-mode" id="toggle-dark-mode">Toggle Dark Mode</div>
     </div>
@@ -132,6 +134,8 @@
                     } catch (e) {
                         currentInput = 'Error';
                     }
+                } else if (key === '⌫') {
+                    currentInput = currentInput.slice(0, -1); // Hapus satu karakter terakhir
                 } else {
                     currentInput += key;
                 }
@@ -176,4 +180,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
